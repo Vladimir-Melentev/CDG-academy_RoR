@@ -1,0 +1,29 @@
+<h1>Lab Reports</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Grade</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @lab_reports.each do |lab_report| %>
+    <tr>
+      <td><%= lab_report.title %></td>
+      <td><%= lab_report.description %></td>
+      <td><%= lab_report.grade %></td>
+      <td><%= lab_report.user.first_name %></td>
+      <td><%= link_to 'Show', lab_report %></td>
+      <td><%= link_to 'Edit', edit_lab_report_path(lab_report) %></td>
+      <td><%= link_to 'Destroy', lab_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Lab Report', new_lab_report_path %>
