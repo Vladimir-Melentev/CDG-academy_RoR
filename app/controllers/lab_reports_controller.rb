@@ -13,7 +13,7 @@ class LabReportsController < ApplicationController
   end
 
   def create
-    @lab_report = LabReport.new lab_report_params
+    @lab_report = LabReport.new(lab_report_params)
     if @lab_report.save
       redirect_to @lab_report, notice: 'Lab report was successfully created.'
     else
