@@ -13,7 +13,7 @@ class LabReportsController < ApplicationController
   end
 
   def create
-    @lab_report = LabReport.new(lab_report_params)
+    @lab_report = LabReport.new lab_report_params
     if @lab_report.save
       redirect_to @lab_report, notice: 'Lab report was successfully created.'
     else
@@ -34,7 +34,7 @@ class LabReportsController < ApplicationController
 
   def destroy
     @lab_report.destroy
-    redirect_to lab_reports_url, notice: 'Lab report was successfully destroyed.'
+    redirect_to lab_reports_path, notice: 'Lab report was successfully destroyed.'
   end
 
   private
