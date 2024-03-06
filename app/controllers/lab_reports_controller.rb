@@ -1,4 +1,3 @@
-# app/controllers/lab_reports_controller.rb
 class LabReportsController < ApplicationController
   before_action :set_lab_report, only: [:show, :edit, :update, :destroy]
 
